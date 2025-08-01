@@ -29,8 +29,8 @@
                          Source=".env" />
                     <File Id="File1" Name="mongo-playground.py"
                          Source="mongo-playground.py" />
-                    <File Id="File2" Name="mr.bat"
-                         Source="mr.bat" />
+                    <File Id="File2" Name="mp.bat"
+                         Source="mp.bat" />
                 </Component>
 
                 <!-- Add System Env Var -->

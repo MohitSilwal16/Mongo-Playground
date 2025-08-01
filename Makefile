@@ -1,2 +1,2 @@
 build:
-	wix build Installer.wxs -o Mongo-Playground-Installer.msi
+	wix build Installer/Installer.wxs -o Mongo-Playground-Installer.msi
