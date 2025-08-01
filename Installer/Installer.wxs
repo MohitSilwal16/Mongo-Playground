@@ -1,0 +1,50 @@
+<?define name = "Mongo Playground Installer"?>
+<?define version = "0.0.1"?>
+<?define publisher = "NemuCorp"?>
+<?define guid = "ef53f648-ffe6-4441-aa29-01058dc14848"?>
+
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+    <Package 
+        Name="$(var.name)" 
+        Manufacturer="$(var.publisher)" 
+        Version="$(var.version)"
+        UpgradeCode="$(var.guid)" 
+        Scope="perMachine"
+        InstallerVersion="500">
+
+       <Media Id="1" Cabinet="setup.cab" EmbedCab="yes" />
+       
+       <!-- Features to include all components -->
+       <Feature Id="InstallFeature" Title="Install Feature">
+           <ComponentRef Id="AddFiles" />
+           <ComponentRef Id="AddEnvVar" />
+       </Feature>
+       
+       <StandardDirectory Id="ProgramFiles64Folder">
+           <Directory Id="INSTALLLOCATION" Name="Mongo Playground">
+               
+                <!-- Place Files in ProgramFiles -->
+                <Component Id="AddFiles" DiskId="1" Guid="59c0c811-5f5a-484e-9943-73147ea43311">
+                    <File Id="File0" Name=".env"
+                         Source=".env" />
+                    <File Id="File1" Name="mongo-playground.py"
+                         Source="mongo-playground.py" />
+                    <File Id="File2" Name="mr.bat"
+                         Source="mr.bat" />
+                </Component>
+
+                <!-- Add System Env Var -->
+                <Component Id="AddEnvVar" Guid="ce795402-1a08-4c77-99d7-d9a5d7d224a3">
+                    <Environment Id="AddSystemEnvPath" 
+                                Name="PATH" 
+                                Action="set" 
+                                Part="last" 
+                                Value="[ProgramFiles64Folder]Mongo Playground\" 
+                                Permanent="yes" 
+                                System="yes" />
+                  </Component>
+
+           </Directory>
+       </StandardDirectory>
+   </Package>
+</Wix>
