@@ -1,2 +1,2 @@
 @echo off
-python C:\Scripts\mongo-runner.py %*
+python C:\Scripts\mongo-playground.py %*
