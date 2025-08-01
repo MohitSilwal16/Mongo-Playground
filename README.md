@@ -32,7 +32,7 @@ Perfect for students, instructors & developers who work with MongoDB & want a pe
 
 ### 🔐 2. Setup Environment Variables
 
-A `.env` file is already included; **please replace the values below with your own MongoDB connection info**:
+A `.env` file is already included at `C:/Program Files (x86)/Mongo Playground/.env`; **please replace the values below with your own MongoDB connection info**:
 
 ```env
 CLUSTER_LINK=mongodb+srv://user:pass@cluster.mongodb.net
