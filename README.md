@@ -21,7 +21,7 @@ Perfect for students, instructors & developers who work with MongoDB & want a pe
 
 ### 🛠️ 1. Install Mongo Playground
 
-1. Download the `.msi` installer from the [Releases](#) section of this repository.  
+1. Download the `.msi` installer from the [Releases](https://github.com/MohitSilwal16/Mongo-Playground/releases) section of this repository.  
 2. Run the installer — it will:
    - Install Mongo Playground
    - Add its path to your system environment variables (so you can run it from anywhere using the `mp` command)
