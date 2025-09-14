@@ -27,8 +27,9 @@ def run_mongosh_command(uri: str, file_path: str, clear_flag: bool) -> None:
                 if not cmd or cmd.startswith("//"):
                     continue
                 print(LIGHT_BLUE_COLOR_CODE + cmd + RESET_COLOR_CODE)
-                cmd = cmd + "\nprint('===END===')"
-                process.stdin.write(cmd + "\n")
+
+                cmd += "\nprint('===END===')\n"
+                process.stdin.write(cmd)
                 process.stdin.flush()
 
                 while True:
@@ -41,6 +42,7 @@ def run_mongosh_command(uri: str, file_path: str, clear_flag: bool) -> None:
                     if output_line.endswith("\n"):
                         output_line = output_line[: len(output_line)]
                     print(output_line, end="")
+
             if input() == "q":
                 exit(0)
             if clear_flag:
